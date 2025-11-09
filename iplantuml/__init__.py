@@ -111,3 +111,7 @@ def plantuml(line, cell):
             svg_path = base_name + ".svg"
             if os.path.exists(svg_path):
                 os.unlink(svg_path)
+
+def load_ipython_extension(ipython):
+    """Load the extension in IPython with %load_ext."""
+    ipython.register_magic_function(plantuml, 'cell')
